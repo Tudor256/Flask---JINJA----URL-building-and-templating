@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+        <meta charset="utf-8" />
+		<title>My Website</title>
+	</head>
+
+
+<body>
+    <h1>Hello World</h1>
+
+	<h1>{{ 5*6 }}</h1>   <!----if curly brackets are added, the code will be run  as Python code (this is due to JINJA templating language)--> 
+	<h2>Random NR: {{num}}</h2>    <!----we're using the num argument which we've defined in the main.py--> 
+
+
+	<!----URL Building - create a link using JINJA for navigating website; url_for function and add the function name you would like to run --> 
+	<a href="{{ url_for('get_blog', num=3) }}">Go To Blog Page</a>    <!--we can add arguments after the fucntion, in this case num=3; this can be passed on to the server and used  --> 
+																	
+<!--the parameter can be used in the main file as per below (also check main file for details)
+@app.route("/blog/<num>")
+def get_blog(num): 
+-->				
+
+
+</body>
+
+
+<footer>
+	<p>Copyright {{current_year}}. Built by FET! </p>
+</footer>
+
+
+</html>

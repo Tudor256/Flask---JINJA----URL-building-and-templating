@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+        <meta charset="utf-8" />
+		<title>Blog</title>
+	</head>
+
+
+<body>
+
+    <!--when running multi line python code, we need to add the % at the begining and the end!!! -->
+    {% for blog_post in posts: %}  <!--multi line code beginning for LOOPS-->
+        {% if blog_post['id']==2: %}     <!--multi line code beginning for IF-->
+            <h1>{{ blog_post['title'] }}</h1>          <!--in between start and end we use single line JINJA expression via the curly brackets -->
+            <h1>{{ blog_post['subtitle'] }}</h1>
+        {% endif %}                     <!--multi line code end for IF-->
+    {% endfor %}                   <!--multi line code ending syntax in case of LOOPS-->
+
+</body>
+
+
+</html>
